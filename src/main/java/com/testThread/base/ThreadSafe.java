@@ -36,7 +36,7 @@ class TicketWindow  {
         int temp0;
         synchronized (LOCK_OBJ){
             temp0 = index;
-            int temp1 = index + 1;
+            int temp1 = temp0 + 1;
             index = temp1;
         }
         //非共享代码不会产生线程安全问题，因为线程虽然运行同一套代码，但是局部变量的值大家并不共享
