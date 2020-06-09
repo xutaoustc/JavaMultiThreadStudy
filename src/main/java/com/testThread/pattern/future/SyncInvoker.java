@@ -20,6 +20,22 @@ public class SyncInvoker {
         System.out.println("===========================");
 
         System.out.println( future.get() );
+
+
+        // 第二种方式，不是我主动询问，而是好了以后通知我(回调)
+        futureService.submit(()->{
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "FINISH1";
+        }, System.out::println);
+        System.out.println("============================");
+        System.out.println(" do other thing 1.");
+        System.out.println("============================");
+
+
     }
 
 
